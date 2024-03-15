@@ -17,23 +17,29 @@
         h1 {
             font-weight: 700; /* Setting font weight to bold for headings */
             text-align: center; /* Centering headings */
-            margin-top: 50px; /* Adding some top margin to headings */
+            margin-top: 30px; /* Adding some top margin to headings */
+            margin-bottom: 20px; /* Adding some bottom margin to headings */
         }
 
         h2 {
             text-align: left; /* Aligning the text to the left */
             margin-left: 20px; /* Adding some left margin */
+            margin-right: 20px; /* Adding some right margin */
         }
 
         form {
             text-align: center; /* Centering the form */
             margin-top: 20px; /* Adding some top margin to the form */
+            margin-bottom: 20px; /* Adding some bottom margin to the form */
         }
 
         input[type="text"] {
             padding: 10px; /* Adding padding to text input */
             border-radius: 5px; /* Adding border radius to text input */
             border: 1px solid #ccc; /* Adding a light border */
+            width: 80%; /* Setting width to 80% of the container */
+            max-width: 300px; /* Setting maximum width to 300px */
+            margin-bottom: 10px; /* Adding some bottom margin */
         }
 
         button[type="submit"] {
@@ -43,6 +49,8 @@
             background-color: #007bff; /* Setting button background color */
             color: #fff; /* Setting button text color */
             cursor: pointer; /* Changing cursor to pointer on hover */
+            width: 80%; /* Setting width to 80% of the container */
+            max-width: 300px; /* Setting maximum width to 300px */
         }
 
         button[type="submit"]:hover {
@@ -59,34 +67,31 @@
 
         .iframe-container {
             display: flex; /* Make the iframes display side by side */
-            justify-content: center; /* Center the iframes horizontally */
+            flex-direction: column; /* Stack iframes vertically on small screens */
+            align-items: center; /* Center iframes horizontally */
             margin-top: 20px; /* Add some top margin */
         }
 
         .iframe-container iframe {
-            margin: 0 10px; /* Add some space between the iframes */
+            margin: 10px; /* Add some space around the iframes */
             border-radius: 12px; /* Adding border radius to iframes */
-        }
-
-        .youtube-iframe {
-            width: 300px; /* Adjusting width of YouTube iframe */
-            height: 380px; /* Adjusting height of YouTube iframe */
+            max-width: 100%; /* Ensure iframes don't overflow on small screens */
         }
     </style>
 </head>
 <body>
-    <h1>Hello world! </h1>
+    <h1>Hello world!</h1>
     <h2><em>Vienna</em> by Billy Joel is one of my favorite songs. One of my favorite lines in the song is "When will you realize, Vienna waits for you?"... What is your Vienna?</h2>
     <form id="sentenceForm">
-        <label for="userInput">When will you realize, <input type="text" id="userInput" name="userInput"> waits for you?</label>
+        <label for="userInput">When will you realize, <input type="text" id="userInput" name="userInput" placeholder="Your Vienna"> waits for you?</label>
         <button type="submit">Submit</button>
     </form>
 
     <div id="output"></div>
 
     <div class="iframe-container">
-        <iframe class="youtube-iframe" width="300" height="380" src="https://www.youtube.com/embed/wccRif2DaGs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <iframe style="border-radius: 12px;" src="https://open.spotify.com/embed/track/4U45aEWtQhrm8A5mxPaFZ7?utm_source=generator&theme=0" width="300" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <iframe width="300" height="380" src="https://www.youtube.com/embed/wccRif2DaGs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="https://open.spotify.com/embed/track/4U45aEWtQhrm8A5mxPaFZ7?utm_source=generator&theme=0" width="300" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     </div>
     
     <script>
