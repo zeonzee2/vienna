@@ -27,4 +27,57 @@
 
         form {
             text-align: center; /* Centering the form */
-     
+            margin-top: 20px; /* Adding some top margin to the form */
+        }
+
+        input[type="text"] {
+            padding: 10px; /* Adding padding to text input */
+            border-radius: 5px; /* Adding border radius to text input */
+            border: 1px solid #ccc; /* Adding a light border */
+        }
+
+        button[type="submit"] {
+            padding: 10px 20px; /* Adding padding to the submit button */
+            border: none; /* Removing border */
+            border-radius: 5px; /* Adding border radius to the button */
+            background-color: #007bff; /* Setting button background color */
+            color: #fff; /* Setting button text color */
+            cursor: pointer; /* Changing cursor to pointer on hover */
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3; /* Darker background color on hover */
+        }
+
+        #output {
+            font-size: 18px; /* Setting font size for output */
+            text-align: center; /* Centering output text */
+            margin-top: 20px; /* Adding top margin to output */
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello world! </h1>
+    <h2><em>Vienna</em> by Billy Joel is one of my favorite songs. One of my favorite lines in the song is "When will you realize, Vienna waits for you?"... What is your Vienna?</h2>
+    <form id="sentenceForm">
+        <label for="userInput">When will you realize, <input type="text" id="userInput" name="userInput"> waits for you?</label>
+        <button type="submit">Submit</button>
+    </form>
+
+    <div id="output"></div>
+
+    <script>
+        document.getElementById("sentenceForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent default form submission
+            
+            var userInput = document.getElementById("userInput").value; // Get the user input
+            
+            // Display the filled-in sentence
+            document.getElementById("output").innerText = "Thank you! And, I hope you reach " + userInput + "!"; // Displaying the message
+
+            // Optionally, clear the input field after submission
+            document.getElementById("userInput").value = "";
+        });
+    </script>
+</body>
+</html>
